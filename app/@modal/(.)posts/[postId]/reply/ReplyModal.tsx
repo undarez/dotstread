@@ -10,8 +10,9 @@ import React from 'react'
 import { CreatePost } from '@/app/write/Write-post.action'
 // import { createPost } from '@/app/write/Write-post-action'
 import WritePostForm, { WritePostFormValues } from '@/app/write/WritePostForm'
+import path from 'path'
 
-const WriteModal = ({ user, CreatePost } : { user: User, CreatePost: (values: WritePostFormValues) => Promise<string>; }) => {
+const ReplyModal = ({ user, CreateReply } : { user: User, CreateReply: (values: WritePostFormValues) => Promise<string>; }) => {
    const router = useRouter()
    const pathname = usePathname()
    return (
@@ -19,16 +20,16 @@ const WriteModal = ({ user, CreatePost } : { user: User, CreatePost: (values: Wr
       
       <Dialog 
 
-      open={pathname === '/write'}
+      open={pathname?.includes("reply")}
       onOpenChange={() => {
          router.back()
       }} 
       >
          <DialogContent >
-            <WritePostForm user={user} onSubmit={CreatePost} />
+            <WritePostForm user={user} onSubmit={CreateReply} />
          </DialogContent>
       </Dialog>
    )
 }
 
-export default WriteModal
+export default ReplyModal

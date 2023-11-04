@@ -39,6 +39,7 @@ const WritePostForm = ({ user, onSubmit }: WritePostFormProps) => {
           // console.log('Submit client side')
           // router.push('/')
           router.push(`/posts/${postId}`)
+          router.refresh()
          }}>
             <FormField
                control={form.control}
