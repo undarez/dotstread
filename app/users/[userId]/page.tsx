@@ -27,7 +27,7 @@ type PageParams = {
     }
 }
 
-const UserPage = async ({params,}: NewType)=>{
+const UserPage = async ({params,}: PageParams)=>{
     
 
     const session = await getAuthSession()
