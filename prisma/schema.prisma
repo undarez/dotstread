@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url = env("DATABASE_URL")
 }
 
 //NextAuth
@@ -96,5 +96,5 @@ model Follow {
   createdAt   DateTime @default(now())
 
   follower User @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
-  followed User @relation("followed", fields: [followerId], references: [id], onDelete: Cascade)
+  followed User @relation("followed", fields: [followingId], references: [id], onDelete: Cascade)
 }
