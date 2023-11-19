@@ -6,7 +6,7 @@ import { Heart, MessageCircle, MoreHorizontal } from 'lucide-react';
 export const PostPlaceholder = () => {
   return (
     <div className={clsx('flex w-full flex-row items-start p-4')}>
-      <Avatar size="default">
+      <Avatar >
         <AvatarFallback>AA</AvatarFallback>
       </Avatar>
       <div className="ml-4 flex w-full flex-col gap-2">
